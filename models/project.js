@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var ProjectSchema = new mongoose.Schema({
     name: String,
     description: String,
-    dueDate: String,
+    dueDate: Date,
     userId: String,
     techReq: String,
     showPublic: Boolean
