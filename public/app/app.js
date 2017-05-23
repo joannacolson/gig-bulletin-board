@@ -1,5 +1,8 @@
 var app = angular.module('ProjectApp', ['ui.router', 'ProjectCtrls']);
 
+//app.config sets the configuration this is an initial states
+// when minification occurs we wont loose those within and w/o the function
+//refer to ln 13-15 index.html for Providers
 app.config([
         '$stateProvider',
         '$urlRouterProvider',
@@ -37,6 +40,7 @@ app.config([
                     templateUrl: 'app/views/userSignup.html',
                     controller: 'SignupCtrl'
                 })
+                // if user clicks the login button on the navbar direct to the userLogin.html page
                 .state('login', {
                     url: '/login',
                     templateUrl: 'app/views/userLogin.html',

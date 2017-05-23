@@ -2,12 +2,13 @@ angular.module('ProjectCtrls', ['ProjectServices'])
     .controller('HomeCtrl', ['$scope', 'Project', function($scope, Project) {
         $scope.projects = [];
 
+        //runs a query against the project file when the view loads - this gives us all of the projects
         Project.query(function success(data) {
             $scope.projects = data;
         }, function error(data) {
             console.log(data);
         });
-
+        // this is unexplanatory based on the delete route in controllers/projects.js routes
         $scope.deleteProject = function(id, projectsIdx) {
             Project.delete({ id: id }, function success(data) {
                 $scope.projects.splice(projectsIdx, 1);
@@ -31,7 +32,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             description: '',
             image: ''
         };
-
+        //***CHANGE THE ROUTE FOR CREATE PROJECT
         $scope.createProject = function() {
             Project.save($scope.project, function success(data) {
                 $location.path('/');
