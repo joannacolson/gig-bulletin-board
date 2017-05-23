@@ -1,4 +1,4 @@
-var app = angular.module('RecipeApp', ['ui.router', 'RecipeCtrls']);
+var app = angular.module('ProjectApp', ['ui.router', 'ProjectCtrls']);
 
 app.config([
         '$stateProvider',
@@ -10,17 +10,17 @@ app.config([
             $stateProvider
                 .state('home', {
                     url: '/',
-                    templateUrl: 'app/views/recipes.html',
+                    templateUrl: 'app/views/projects.html',
                     controller: 'HomeCtrl'
                 })
-                .state('newRecipe', {
-                    url: '/recipes/new',
-                    templateUrl: 'app/views/newRecipe.html',
+                .state('newProject', {
+                    url: '/projects/new',
+                    templateUrl: 'app/views/newProject.html',
                     controller: 'NewCtrl'
                 })
-                .state('recipeShow', {
-                    url: '/recipes/:id',
-                    templateUrl: 'app/views/showRecipe.html',
+                .state('projectShow', {
+                    url: '/projects/:id',
+                    templateUrl: 'app/views/showProject.html',
                     controller: 'ShowCtrl'
                 })
                 .state('signup', {
