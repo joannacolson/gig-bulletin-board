@@ -1,16 +1,37 @@
-<h1>New Project</h1>
+<!-- *** Add Project Page -->
+<h1>Add A New Project</h1>
 <form ng-submit="createProject()">
+    <!-- Name of Project-->
     <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" ng-model="project.title">
+        <label for="name">Name of Project</label>
+        <input type="text" class="form-control" id="name" ng-model="project.name">
     </div>
+    <!-- Description -->
     <div class="form-group">
         <label for="description">Description</label>
         <textarea class="form-control" id="description" ng-model="project.description"></textarea>
     </div>
+    <!-- Due Date -->
     <div class="form-group">
-        <label for="image">Image Link</label>
-        <input type="url" class="form-control" id="image" placeholder="" ng-model="project.image">
+        <label for="dueDate">Due Date</label>
+        <input type="date" class="form-control" id="date" placeholder="date" ng-model="project.dueDate">
     </div>
+    <!-- User ID -->
+    <!-- Considering using a select option -->
+    <div class="form-group">
+        <label for="userId">User Id</label>
+        <input type="text" class="form-control" id="userId" placeholder="User Id" ng-model="project.userId">
+    </div>
+    <!-- Tech Requested -->
+    <div class="form-group">
+        <label for="techReq">Requested Technologies</label>
+        <input type="techReq" class="form-control" id="techReq" placeholder="Technologies" ng-model="project.techReq">
+    </div>
+    <!-- Show to Public -->
+    <div class="form-group">
+        <label for="showPublic">Show to Public</label>
+        <input type="radio" class="form-control" id="showPublic" placeholder="showPublic" ng-model="project.showPublic">
+    </div>
+    <!-- Submit Button -->
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
