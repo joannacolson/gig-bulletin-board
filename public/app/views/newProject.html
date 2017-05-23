@@ -1,5 +1,6 @@
 <!-- *** Add Project Page -->
 <h1>Add A New Project</h1>
+<!-- Lokk at createProject -->
 <form ng-submit="createProject()">
     <!-- Name of Project-->
     <div class="form-group">
@@ -17,11 +18,11 @@
         <input type="date" class="form-control" id="date" placeholder="date" ng-model="project.dueDate">
     </div>
     <!-- User ID -->
-    <!-- Considering using a select option -->
-    <div class="form-group">
+    <!-- This is unnecessary because it will be submitted according to the user based on their login -->
+    <!-- <div class="form-group">
         <label for="userId">User Id</label>
         <input type="text" class="form-control" id="userId" placeholder="User Id" ng-model="project.userId">
-    </div>
+    </div> -->
     <!-- Tech Requested -->
     <div class="form-group">
         <label for="techReq">Requested Technologies</label>
@@ -30,7 +31,7 @@
     <!-- Show to Public -->
     <div class="form-group">
         <label for="showPublic">Show to Public</label>
-        <input type="radio" class="form-control" id="showPublic" placeholder="showPublic" ng-model="project.showPublic">
+        <input type="checkbox" id="showPublic" placeholder="showPublic" ng-model="project.showPublic">
     </div>
     <!-- Submit Button -->
     <button type="submit" class="btn btn-primary">Submit</button>
