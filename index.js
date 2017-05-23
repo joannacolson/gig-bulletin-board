@@ -20,7 +20,7 @@ rowdy.begin(app);
 // mongoose models and connection
 var mongoose = require('mongoose');
 var User = require('./models/user');
-mongoose.connect('mongodb://localhost/recipes');
+mongoose.connect('mongodb://localhost/gigBBprojects');
 
 // decode POST data in JSON and URL encoded formats
 app.use(bodyParser.json());
@@ -29,11 +29,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('morgan')('dev'));
 
 // OLD controllers without authorization
-// app.use('/api/recipes', require('./controllers/recipes'));
+// app.use('/api/projects', require('./controllers/projects'));
 // app.use('/api/users', require('./controllers/users'));
 
 // Replace the above routes with the following
-app.use('/api/recipes', expressJWT({ secret: secret }), require('./controllers/recipes'));
+app.use('/api/projects', expressJWT({ secret: secret }), require('./controllers/projects'));
 app.use('/api/users', expressJWT({ secret: secret }).unless({
     path: [{ url: '/api/users', methods: ['POST'] }]
 }), require('./controllers/users'));

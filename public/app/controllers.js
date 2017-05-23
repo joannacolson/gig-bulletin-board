@@ -1,39 +1,39 @@
-angular.module('RecipeCtrls', ['RecipeServices'])
-    .controller('HomeCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
-        $scope.recipes = [];
+angular.module('ProjectCtrls', ['ProjectServices'])
+    .controller('HomeCtrl', ['$scope', 'Project', function($scope, Project) {
+        $scope.projects = [];
 
-        Recipe.query(function success(data) {
-            $scope.recipes = data;
+        Project.query(function success(data) {
+            $scope.projects = data;
         }, function error(data) {
             console.log(data);
         });
 
-        $scope.deleteRecipe = function(id, recipesIdx) {
-            Recipe.delete({ id: id }, function success(data) {
-                $scope.recipes.splice(recipesIdx, 1);
+        $scope.deleteProject = function(id, projectsIdx) {
+            Project.delete({ id: id }, function success(data) {
+                $scope.projects.splice(projectsIdx, 1);
             }, function error(data) {
                 console.log(data);
             });
         };
     }])
-    .controller('ShowCtrl', ['$scope', '$stateParams', 'Recipe', function($scope, $stateParams, Recipe) {
-        $scope.recipe = {};
+    .controller('ShowCtrl', ['$scope', '$stateParams', 'Project', function($scope, $stateParams, Project) {
+        $scope.project = {};
 
-        Recipe.get({ id: $stateParams.id }, function success(data) {
-            $scope.recipe = data;
+        Project.get({ id: $stateParams.id }, function success(data) {
+            $scope.project = data;
         }, function error(data) {
             console.log(data);
         });
     }])
-    .controller('NewCtrl', ['$scope', '$location', 'Recipe', function($scope, $location, Recipe) {
-        $scope.recipe = {
+    .controller('NewCtrl', ['$scope', '$location', 'Project', function($scope, $location, Project) {
+        $scope.project = {
             title: '',
             description: '',
             image: ''
         };
 
-        $scope.createRecipe = function() {
-            Recipe.save($scope.recipe, function success(data) {
+        $scope.createProject = function() {
+            Project.save($scope.project, function success(data) {
                 $location.path('/');
             }, function error(data) {
                 console.log(data);
