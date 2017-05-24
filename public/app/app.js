@@ -11,29 +11,39 @@ app.config([
             $urlRouterProvider.otherwise('/404');
 
             $stateProvider
-            // update the home page
-
                 .state('home', {
                     url: '/',
-                    templateUrl: 'app/views/home.html',
-                    // controller?? HomeCtrl
+                    templateUrl: 'app/views/home.html'
                 })
-                //This is the bulletin board route we need to change url
-                .state('BB', {
-                    url: '/',
+                .state('projects', {
+                    url: '/projects',
                     templateUrl: 'app/views/projects.html',
-                    controller: 'HomeCtrl'
+                    controller: 'IndexCtrl'
                 })
-
-            .state('newProject', {
+                .state('newProject', {
                     url: '/projects/new',
                     templateUrl: 'app/views/newProject.html',
                     controller: 'NewCtrl'
                 })
-                .state('projectShow', {
+                .state('editProject', {
+                    url: '/projects/edit',
+                    templateUrl: 'app/views/editProject.html',
+                    controller: 'EditCtrl'
+                })
+                .state('showProject', {
                     url: '/projects/:id',
                     templateUrl: 'app/views/showProject.html',
                     controller: 'ShowCtrl'
+                })
+                .state('editUser', {
+                    url: '/users/edit',
+                    templateUrl: 'app/views/editUser.html',
+                    controller: 'EditUserCtrl'
+                })
+                .state('showUser', {
+                    url: '/users/:id',
+                    templateUrl: 'app/views/showUser.html',
+                    controller: 'ShowUserCtrl'
                 })
                 .state('signup', {
                     url: '/signup',

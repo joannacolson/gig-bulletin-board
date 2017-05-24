@@ -11,6 +11,10 @@ Requirements:
 
 -- Installation instructions for any dependencies
 
+Dependencies:
+
+bcrypt, body-parser, dotenv, express, express-jwt, jsonwebtoken, mongoose, morgan, rowdy-logger.
+
 -- Link to your user stories – who are your users, what do they want, and why?
 
 User stories:

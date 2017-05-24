@@ -1,5 +1,5 @@
 angular.module('ProjectCtrls', ['ProjectServices'])
-    .controller('HomeCtrl', ['$scope', 'Project', function($scope, Project) {
+    .controller('IndexCtrl', ['$scope', 'Project', function($scope, Project) {
         $scope.projects = [];
 
         //runs a query against the project file when the view loads - this gives us all of the projects
@@ -84,7 +84,11 @@ angular.module('ProjectCtrls', ['ProjectServices'])
                 Alerts.add('success', 'You are now logged in successfully.');
                 $timeout(clearAlerts, 5500);
                 // $scope.isLoggedIn = Auth.isLoggedIn();
-                $location.path('/bboard'); // redirect to bulletin board
+
+
+
+                $location.path('/bboard'); // redirect logged-in user to bboard page
+
             }, function error(res) {
                 console.log('Something went wrong', res);
                 Alerts.add('error', 'Bad Login Info, Please Try Again.');
