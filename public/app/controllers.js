@@ -32,10 +32,9 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             description: '',
             image: ''
         };
-        //***CHANGE THE ROUTE FOR CREATE PROJECT
         $scope.createProject = function() {
             Project.save($scope.project, function success(data) {
-                $location.path('/');
+                $location.path('/projects');
             }, function error(data) {
                 console.log(data);
             });
@@ -47,21 +46,37 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             return Auth.isLoggedIn();
         }
         $scope.logout = function() {
-            // to implement
-            // console.log('logging out');
             Auth.removeToken();
         };
     }])
-    .controller('SignupCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+    .controller('SignupCtrl', ['$scope', '$timeout', 'Auth', '$http', '$location', 'Alerts', function($scope, $timeout, Auth, $http, $location, Alerts) {
         $scope.user = {
+            firstName: '',
+            lastName: '',
+            phone: '',
+            link: '',
             email: '',
             password: ''
         };
+        var clearAlerts = function() {
+            Alerts.clear();
+        };
+
         $scope.userSignup = function() {
-            // to implement
             $http.post('/api/users', $scope.user).then(function success(res) {
                 console.log('successfully created a new user', res);
-                $location.path('/'); //relocate to the home page
+                // automatically log in the new user using the same logic as in the LoginCtrl
+                $http.post('/api/auth', $scope.user).then(function success(res) {
+                    console.log('response from server when logging in:', res);
+                    Auth.saveToken(res.data.token);
+                    Alerts.add('success', 'You are now logged in successfully.');
+                    $timeout(clearAlerts, 5500);
+                    $location.path('/projects'); // redirect logged-in user to bboard page
+                }, function error(res) {
+                    console.log('Something went wrong', res);
+                    Alerts.add('error', 'Bad Login Info, Please Try Again.');
+                    $timeout(clearAlerts, 5500);
+                });
             }, function error(res) {
                 console.log('Error while signing up', res);
             });
@@ -77,18 +92,12 @@ angular.module('ProjectCtrls', ['ProjectServices'])
         };
 
         $scope.userLogin = function() {
-            // to implement
             $http.post('/api/auth', $scope.user).then(function success(res) {
                 console.log('response from server when logging in:', res);
                 Auth.saveToken(res.data.token);
                 Alerts.add('success', 'You are now logged in successfully.');
                 $timeout(clearAlerts, 5500);
-                // $scope.isLoggedIn = Auth.isLoggedIn();
-
-
-
-                $location.path('/bboard'); // redirect logged-in user to bboard page
-
+                $location.path('/projects'); // redirect logged-in user to bboard page
             }, function error(res) {
                 console.log('Something went wrong', res);
                 Alerts.add('error', 'Bad Login Info, Please Try Again.');
@@ -101,6 +110,3 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             return Alerts.get();
         };
     }]);
-// .controller('AlertCtrl', ['$scope', 'Alerts', function($scope, Alerts) {
-//     $scope.Alerts = Alerts;
-// }]);
