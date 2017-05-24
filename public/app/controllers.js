@@ -84,7 +84,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
                 Alerts.add('success', 'You are now logged in successfully.');
                 $timeout(clearAlerts, 5500);
                 // $scope.isLoggedIn = Auth.isLoggedIn();
-                $location.path('/'); // redirect to home page
+                $location.path('/bboard'); // redirect to bulletin board
             }, function error(res) {
                 console.log('Something went wrong', res);
                 Alerts.add('error', 'Bad Login Info, Please Try Again.');

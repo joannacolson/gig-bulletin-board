@@ -40,7 +40,7 @@ app.config([
                     templateUrl: 'app/views/userSignup.html',
                     controller: 'SignupCtrl'
                 })
-                // if user clicks the login button on the navbar direct to the userLogin.html page
+                // if user clicks the login button on the navbar direct to the login.html page
                 .state('login', {
                     url: '/login',
                     templateUrl: 'app/views/userLogin.html',
