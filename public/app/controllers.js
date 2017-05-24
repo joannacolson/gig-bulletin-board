@@ -87,7 +87,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
 
 
 
-                $location.path('/bboard'); // redirect logged-in user to bboard page
+                $location.path('/projects'); // redirect logged-in user to bboard page
 
             }, function error(res) {
                 console.log('Something went wrong', res);
