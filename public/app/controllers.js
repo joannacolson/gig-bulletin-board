@@ -63,6 +63,25 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             });
         };
     }])
+    .controller('EditUserCtrl', ['$scope', '$stateParams', '$location', 'Project', function($scope, $stateParams, $location, Project) {
+        $scope.user = {};
+
+        User.get({ id: $stateParams.id }, function success(data) {
+            $scope.user = data;
+        }, function error(data) {
+            console.log(data);
+        });
+
+        $scope.updateUser = function() {
+            // Pick up coding here... verify order of parameters below
+            User.update({ id: $stateParams.id }, $scope.user, function success(data) {
+                //**TO DO: direct user to a different path
+                $location.path('/projects');
+            }, function error(data) {
+                console.log(data);
+            });
+        };
+    }])
     .controller('NavCtrl', ['$scope', 'Auth', function($scope, Auth) {
         //set the variable to whether we are logged in
         $scope.isLoggedIn = function() {
