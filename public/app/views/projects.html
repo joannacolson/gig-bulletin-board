@@ -1,13 +1,13 @@
-<!-- This is the bulletin board for new projects listings -->
-<!-- Do an ng-repeat to pull all projects into view-->
+<!-- This is the bulletin board for projects listings -->
 <h1>Gig Bulletin Board</h1>
 <a href="/projects/new" class="btn btn-success">New Project</a>
 <div class="form-group">
     <label for="search">Search</label>
     <input type="text" class="form-control" id="search" ng-model="search">
 </div>
-<div class="well" ng-repeat="project in projects | filter:{title:search} track by project._id">
+<div class="well" ng-repeat="project in projects | filter:{name:search} track by project._id">
     <h1>{{project.name}}</h1>
-    <a ng-href="/projects/{{project._id}}">Permalink</a>
+    <h3>{{project.description}} </h3>
+    <a ng-href="/projects/{{project._id}}">Show Project Details?</a>
     <a ng-click="deleteProject(project._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a>
 </div>
