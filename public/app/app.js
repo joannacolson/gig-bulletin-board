@@ -36,7 +36,7 @@ app.config([
                     controller: 'ShowCtrl'
                 })
                 .state('editUser', {
-                    url: '/users/edit',
+                    url: '/users/edit/:id',
                     templateUrl: 'app/views/editUser.html',
                     controller: 'EditUserCtrl'
                 })
