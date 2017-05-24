@@ -26,7 +26,7 @@ app.config([
                     controller: 'NewCtrl'
                 })
                 .state('editProject', {
-                    url: '/projects/edit',
+                    url: '/projects/edit/:id',
                     templateUrl: 'app/views/editProject.html',
                     controller: 'EditCtrl'
                 })

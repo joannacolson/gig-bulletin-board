@@ -28,12 +28,35 @@ angular.module('ProjectCtrls', ['ProjectServices'])
     }])
     .controller('NewCtrl', ['$scope', '$location', 'Project', function($scope, $location, Project) {
         $scope.project = {
-            title: '',
+            name: '',
             description: '',
-            image: ''
+            dueDate: null,
+            userId: '',
+            techReq: '',
+            showPublic: false
         };
+
+        // TO DO: Get the current user's id and add it to the new project record
         $scope.createProject = function() {
             Project.save($scope.project, function success(data) {
+                $location.path('/projects');
+            }, function error(data) {
+                console.log(data);
+            });
+        };
+    }])
+    .controller('EditCtrl', ['$scope', '$stateParams', '$location', 'Project', function($scope, $stateParams, $location, Project) {
+        $scope.project = {};
+
+        Project.get({ id: $stateParams.id }, function success(data) {
+            $scope.project = data;
+        }, function error(data) {
+            console.log(data);
+        });
+
+        $scope.updateProject = function() {
+            // Pick up coding here... verify order of parameters below
+            Project.update({ id: $stateParams.id }, $scope.project, function success(data) {
                 $location.path('/projects');
             }, function error(data) {
                 console.log(data);

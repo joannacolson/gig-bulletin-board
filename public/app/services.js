@@ -1,9 +1,21 @@
 angular.module('ProjectServices', ['ngResource'])
     .factory('Project', ['$resource', function($resource) {
-        return $resource('/api/projects/:id');
+        return $resource('/api/projects/:id', {}, {
+            get: { method: 'GET', cache: false, isArray: false }, //GET :id
+            save: { method: 'POST', cache: false, isArray: false }, //POST (add one)
+            query: { method: 'GET', cache: false, isArray: true }, //GET all
+            update: { method: 'PUT', cache: false, isArray: false }, //PUT :id (update one)
+            remove: { method: 'DELETE', cache: false, isArray: false } //DELETE :id
+        });
     }])
     .factory('User', ['$resource', function($resource) {
-        return $resource('/api/users/:id');
+        return $resource('/api/users/:id', {}, {
+            get: { method: 'GET', cache: false, isArray: false }, //GET :id
+            save: { method: 'POST', cache: false, isArray: false }, //POST (add one)
+            query: { method: 'GET', cache: false, isArray: true }, //GET all
+            update: { method: 'PUT', cache: false, isArray: false }, //PUT :id (update one)
+            remove: { method: 'DELETE', cache: false, isArray: false } //DELETE :id
+        });
     }])
     .factory('Auth', ['$window', function($window) {
         return {

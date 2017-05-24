@@ -1,8 +1,37 @@
-<h1>This is the Edit Project Page</h1>
-</div>
-<!-- Ability to delete Project should be moved to Edit Project page -->
-<div class="well" ng-repeat="project in projects | filter:{title:search} track by project._id">
-    <h1>{{project.name}}</h1>
-    <a ng-href="/projects/{{project._id}}">Permalink</a>
-    <a ng-click="deleteProject(project._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a>
-</div>
+<!-- *** Edit Project Page -->
+<h1>Edit A Project</h1>
+<form ng-submit="updateProject()">
+    <!-- Name of Project-->
+    <div class="form-group">
+        <label for="name">Name of Project</label>
+        <input type="text" class="form-control" id="name" ng-model="project.name">
+    </div>
+    <!-- Description -->
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" ng-model="project.description"></textarea>
+    </div>
+    <!-- Due Date -->
+    <div class="form-group">
+        <label for="dueDate">Due Date</label>
+        <input type="date" class="form-control" id="date" placeholder="date" ng-model="project.dueDate">
+    </div>
+    <!-- User ID -->
+    <!-- This is unnecessary because it will be submitted according to the user based on their login -->
+    <!-- <div class="form-group">
+        <label for="userId">User Id</label>
+        <input type="text" class="form-control" id="userId" placeholder="User Id" ng-model="project.userId">
+    </div> -->
+    <!-- Tech Requested -->
+    <div class="form-group">
+        <label for="techReq">Requested Technologies</label>
+        <input type="text" class="form-control" id="techReq" placeholder="Technologies" ng-model="project.techReq">
+    </div>
+    <!-- Show to Public -->
+    <div class="form-group">
+        <label for="showPublic">Show to Public</label>
+        <input type="checkbox" id="showPublic" placeholder="showPublic" ng-model="project.showPublic">
+    </div>
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
