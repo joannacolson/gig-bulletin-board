@@ -1,3 +1,8 @@
 <h1>This is the Edit Project Page</h1>
-<div class="editProject">
+</div>
+<!-- Ability to delete Project should be moved to Edit Project page -->
+<div class="well" ng-repeat="project in projects | filter:{title:search} track by project._id">
+    <h1>{{project.name}}</h1>
+    <a ng-href="/projects/{{project._id}}">Permalink</a>
+    <a ng-click="deleteProject(project._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a>
 </div>
