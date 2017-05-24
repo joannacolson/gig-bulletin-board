@@ -8,7 +8,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
         }, function error(data) {
             console.log(data);
         });
-        // this is unexplanatory based on the delete route in controllers/projects.js routes
+
         $scope.deleteProject = function(id, projectsIdx) {
             Project.delete({ id: id }, function success(data) {
                 $scope.projects.splice(projectsIdx, 1);
@@ -63,7 +63,25 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             });
         };
     }])
-    .controller('EditUserCtrl', ['$scope', '$stateParams', '$location', 'Project', function($scope, $stateParams, $location, Project) {
+    .controller('IndexUsersCtrl', ['$scope', 'User', function($scope, User) {
+        $scope.users = [];
+
+        //runs a query against the user file when the view loads - this gives us all of the users
+        User.query(function success(data) {
+            $scope.users = data;
+        }, function error(data) {
+            console.log(data);
+        });
+
+        $scope.deleteUser = function(id, usersIdx) {
+            User.delete({ id: id }, function success(data) {
+                $scope.users.splice(usersIdx, 1);
+            }, function error(data) {
+                console.log(data);
+            });
+        };
+    }])
+    .controller('EditUserCtrl', ['$scope', '$stateParams', '$location', 'User', function($scope, $stateParams, $location, User) {
         $scope.user = {};
 
         User.get({ id: $stateParams.id }, function success(data) {
@@ -81,6 +99,26 @@ angular.module('ProjectCtrls', ['ProjectServices'])
                 console.log(data);
             });
         };
+    }])
+    .controller('ShowUserCtrl', ['$scope', '$stateParams', '$location', 'User', function($scope, $stateParams, $location, User) {
+        $scope.user = {};
+
+        User.get({ id: $stateParams.id }, function success(data) {
+            $scope.user = data;
+        }, function error(data) {
+            console.log(data);
+        });
+
+        // Replace this with a different function (or no function at all?)
+        // $scope.updateUser = function() {
+        // Pick up coding here... verify order of parameters below
+        // User.update({ id: $stateParams.id }, $scope.user, function success(data) {
+        //**TO DO: direct user to a different path
+        // $location.path('/projects');
+        // }, function error(data) {
+        // console.log(data);
+        // });
+        // };
     }])
     .controller('NavCtrl', ['$scope', 'Auth', function($scope, Auth) {
         //set the variable to whether we are logged in

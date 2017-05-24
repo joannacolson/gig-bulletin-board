@@ -35,6 +35,11 @@ app.config([
                     templateUrl: 'app/views/showProject.html',
                     controller: 'ShowCtrl'
                 })
+                .state('users', {
+                    url: '/users',
+                    templateUrl: 'app/views/users.html',
+                    controller: 'IndexUsersCtrl'
+                })
                 .state('editUser', {
                     url: '/users/edit/:id',
                     templateUrl: 'app/views/editUser.html',
