@@ -68,6 +68,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
 
         //runs a query against the user file when the view loads - this gives us all of the users
         User.query(function success(data) {
+            console.log("Query all users front-end data:", data);
             $scope.users = data;
         }, function error(data) {
             console.log(data);

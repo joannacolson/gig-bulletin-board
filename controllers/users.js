@@ -8,7 +8,7 @@ router.route('/')
         User.find(function(err, users) {
             if (err) return res.status(500).send(err);
 
-            console.log("Find all users data:", users);
+            console.log("Find all users back-end data:", users);
             return res.send(users);
         });
     });
