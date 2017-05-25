@@ -22,6 +22,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
 
         Project.get({ id: $stateParams.id }, function success(data) {
             $scope.project = data;
+            $scope.project.dueDate = new Date(data.dueDate);
         }, function error(data) {
             console.log(data);
         });
@@ -30,7 +31,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
         $scope.project = {
             name: '',
             description: '',
-            dueDate: null,
+            dueDate: new Date(),
             userId: '',
             techReq: '',
             showPublic: false
@@ -50,6 +51,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
 
         Project.get({ id: $stateParams.id }, function success(data) {
             $scope.project = data;
+            $scope.project.dueDate = new Date(data.dueDate);
         }, function error(data) {
             console.log(data);
         });
