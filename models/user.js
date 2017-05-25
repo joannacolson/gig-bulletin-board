@@ -20,9 +20,12 @@ var UserSchema = mongoose.Schema({
 UserSchema.set('toJSON', {
     transform: function(doc, ret, options) {
         var returnJson = {
-            id: ret._id,
-            email: ret.email,
-            name: ret.name
+            _id: ret._id,
+            firstName: ret.firstName,
+            lastName: ret.lastName,
+            phone: ret.phone,
+            link: ret.link,
+            email: ret.email
         };
         return returnJson;
     }
