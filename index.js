@@ -21,7 +21,8 @@ rowdy.begin(app);
 // mongoose models and connection //invoke the users model when User is called
 var mongoose = require('mongoose');
 var User = require('./models/user');
-mongoose.connect('mongodb://localhost/gigBBprojects');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/gigBBprojects');
+
 
 // decode POST data in JSON and URL encoded formats
 app.use(bodyParser.json());
