@@ -51,7 +51,22 @@
 </div>
 <a class="backbtn" href="/users">&larr; Back to Users Listing</a>
 <hr>
-<!-- DO WE NEED THIS EXTRA EDIT USER LINK BELOW? -->
-<!-- <a ng-href="/users/edit/{{user._id}}">Edit Profile</a> -->
-<hr>
 <a ng-href="/users/edit/{{user._id}}" ng-show="isCurrentUser(user._id)">Edit Profile</a>
+<hr>
+<!-- This is the bulletin board for projects listings -->
+<h1>Your Projects</h1>
+<a href="/projects/new" class="btn btn-success">New Project</a>
+<div class="form-group">
+    <label for="search">Search Projects</label>
+    <input type="text" class="form-control" id="search" ng-model="search">
+</div>
+<div class="well" ng-repeat="project in projects | filter:{userId:user._id} | filter:{name:search} track by project._id">
+    <h3>Project: {{project.name}}</h3>
+    <p>Description: {{project.description}} </p>
+    <h4>Project due date: {{project.dueDate | date}}</h4>
+    <h5>Tech Required: {{project.techReq}}</h5>
+    <br>
+    <a target="_blank" ng-href="/projects/{{project._id}}">Show Project Details</a>
+    <a ng-href="/projects/edit/{{project._id}}">Edit Project Details</a>
+    <a ng-click="deleteProject(project._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right">Delete Project</a>
+</div>
