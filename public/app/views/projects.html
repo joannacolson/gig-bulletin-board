@@ -7,13 +7,15 @@
 </div>
 <div class="well" ng-repeat="project in projects | filter:{name:search} track by project._id">
     <!-- Add project owner -->
-    <h1>Project Owner: {{ project.owner }}</h1>
-    <h1>Project: {{project.name}}</h1>
+    <h2>Project Owner: {{ project.owner }}</h2>
+    <h2>Project: {{project.name}}</h2>
     <h3>Description: {{project.description}} </h3>
     <h5>Tech Required: {{project.techReq}}</h5>
     <h7>User Id: {{ project.userId }}</h7>
-    <p>**Comment out edit/delete this is public**</p>
-    <a ng-href="/projects/{{project._id}}">Show Project Details</a>
-    <a ng-href="/projects/edit/{{project._id}}">Edit Project Details</a>
-    <a ng-click="deleteProject(project._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a>
+    <br>
+    <!--     <p>**Comment out edit/delete this is public**</p> -->
+    <a target="_blank" ng-href="/projects/{{project._id}}">Project Details</a>
+    <!-- <a ng-href="/projects/edit/{{project._id}}">Edit Project Details</a>
+<a ng-click="deleteProject(project._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a>
+ -->
 </div>
