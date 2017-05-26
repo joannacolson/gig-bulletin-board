@@ -161,6 +161,9 @@ angular.module('ProjectCtrls', ['ProjectServices'])
         $scope.logout = function() {
             Auth.removeToken();
         };
+        $scope.getCurrentUserId = function() {
+            return Auth.currentUser()._id;
+        };
     }])
     .controller('SignupCtrl', ['$scope', '$timeout', 'Auth', '$http', '$location', 'Alerts', function($scope, $timeout, Auth, $http, $location, Alerts) {
         $scope.user = {
