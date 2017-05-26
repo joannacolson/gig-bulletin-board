@@ -133,7 +133,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             });
         };
     }])
-    .controller('ShowUserCtrl', ['$scope', '$stateParams', '$location', 'User', function($scope, $stateParams, $location, User) {
+    .controller('ShowUserCtrl', ['$scope', '$stateParams', '$location', 'User', 'Auth', function($scope, $stateParams, $location, User, Auth) {
         $scope.user = {};
 
         User.get({ id: $stateParams.id }, function success(data) {
@@ -142,6 +142,9 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             console.log(data);
         });
 
+        $scope.isCurrentUser = function(user_id) {
+            return user_id == Auth.currentUser()._id;
+        };
         // Replace this with a different function (or no function at all?)
         // $scope.updateUser = function() {
         // Pick up coding here... verify order of parameters below
