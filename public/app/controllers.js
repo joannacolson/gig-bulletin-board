@@ -1,13 +1,34 @@
 angular.module('ProjectCtrls', ['ProjectServices'])
-    .controller('IndexCtrl', ['$scope', 'Project', function($scope, Project) {
+    .controller('IndexCtrl', ['$scope', 'Project', 'User', function($scope, Project, User) {
         $scope.projects = [];
 
         //runs a query against the project file when the view loads - this gives us all of the projects
         Project.query(function success(data) {
             $scope.projects = data;
+            $scope.projects.forEach(function(project) {
+                console.log('Here is the userId:', project.userId);
+                User.get({ id: project.userId }, function success(user) {
+                    console.log('Here is the user object:', user);
+                    project.owner = user.firstName + " " + user.lastName;
+                }, function error(data) {
+                    console.log(data);
+                });
+            });
         }, function error(data) {
             console.log(data);
         });
+
+        // $scope.getProjectOwnerName = function(userId) {
+        //     console.log('Here is the userId:', userId);
+        //     var ownerName = 'Joanna Colson.';
+        //     User.get({ id: userId }, function success(user) {
+        //         console.log('Here is the user object:', user);
+        //         ownerName = user.firstName + " " + user.lastName;
+        //     }, function error(data) {
+        //         console.log(data);
+        //     });
+        //     return ownerName;
+        // };
 
         $scope.deleteProject = function(id, projectsIdx) {
             Project.delete({ id: id }, function success(data) {
@@ -29,7 +50,6 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             }, function error(data) {
                 console.log(data);
             });
-
 
         }, function error(data) {
             console.log(data);
@@ -135,7 +155,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
         //set the variable to whether we are logged in
         $scope.isLoggedIn = function() {
             return Auth.isLoggedIn();
-        }
+        };
         $scope.logout = function() {
             Auth.removeToken();
         };
