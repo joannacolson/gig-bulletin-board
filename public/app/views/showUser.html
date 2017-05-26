@@ -37,4 +37,4 @@
     <button type="submit" class="btn btn-primary">Submit Changes</button>
 </form>
 <hr>
-<a ng-href="/users/edit/{{user._id}}">Edit Profile</a>
+<a ng-href="/users/edit/{{user._id}}" ng-show="isCurrentUser(user._id)">Edit Profile</a>
