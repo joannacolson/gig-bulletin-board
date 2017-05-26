@@ -6,9 +6,9 @@ angular.module('ProjectCtrls', ['ProjectServices'])
         Project.query(function success(data) {
             $scope.projects = data;
             $scope.projects.forEach(function(project) {
-                console.log('Here is the userId:', project.userId);
+                // console.log('Here is the userId:', project.userId);
                 User.get({ id: project.userId }, function success(user) {
-                    console.log('Here is the user object:', user);
+                    // console.log('Here is the user object:', user);
                     project.owner = user.firstName + " " + user.lastName;
                 }, function error(data) {
                     console.log(data);
@@ -55,16 +55,18 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             console.log(data);
         });
     }])
-    .controller('NewCtrl', ['$scope', '$location', 'Project', function($scope, $location, Project) {
+    .controller('NewCtrl', ['$scope', '$location', 'Project', 'Auth', function($scope, $location, Project, Auth) {
+        var currentUser_id = Auth.currentUser()._id;
+        // console.log('Auth currentUser._id is:', currentUser_id);
         $scope.project = {
             name: '',
             description: '',
             dueDate: new Date(),
-            userId: '',
+            userId: currentUser_id,
             techReq: '',
             showPublic: false
         };
-
+        // console.log('$scope.project object:', $scope.project);
         // TO DO: Get the current user's id and add it to the new project record
         $scope.createProject = function() {
             Project.save($scope.project, function success(data) {
@@ -131,7 +133,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             });
         };
     }])
-    .controller('ShowUserCtrl', ['$scope', '$stateParams', '$location', 'User', function($scope, $stateParams, $location, User) {
+    .controller('ShowUserCtrl', ['$scope', '$stateParams', '$location', 'User', 'Auth', function($scope, $stateParams, $location, User, Auth) {
         $scope.user = {};
 
         User.get({ id: $stateParams.id }, function success(data) {
@@ -140,6 +142,9 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             console.log(data);
         });
 
+        $scope.isCurrentUser = function(user_id) {
+            return user_id == Auth.currentUser()._id;
+        };
         // Replace this with a different function (or no function at all?)
         // $scope.updateUser = function() {
         // Pick up coding here... verify order of parameters below
@@ -158,6 +163,9 @@ angular.module('ProjectCtrls', ['ProjectServices'])
         };
         $scope.logout = function() {
             Auth.removeToken();
+        };
+        $scope.getCurrentUserId = function() {
+            return Auth.currentUser()._id;
         };
     }])
     .controller('SignupCtrl', ['$scope', '$timeout', 'Auth', '$http', '$location', 'Alerts', function($scope, $timeout, Auth, $http, $location, Alerts) {
