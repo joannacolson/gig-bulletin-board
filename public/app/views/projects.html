@@ -7,10 +7,10 @@
 </div>
 <div class="well" ng-repeat="project in projects | filter:{name:search} track by project._id">
     <!-- Add project owner -->
-    <h2>Project Owner: {{ project.owner }}</h2>
     <h3>Project: {{project.name}}</h3>
     <p>Description: {{project.description}} </p>
     <h5>Tech Required: {{project.techReq}}</h5>
+    <h2>Project Owner: {{ project.owner }}</h2>
     <!-- <h7>User Id: {{ project.userId }}</h7> -->
     <br>
     <!--     <p>**Comment out edit/delete this is public**</p> -->

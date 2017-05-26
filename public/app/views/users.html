@@ -1,16 +1,27 @@
 <h1>Users Index Listing</h1>
-<div class="form-group">
+<div class="row">
     <label for="search">Search</label>
     <input type="text" class="form-control" id="search" ng-model="search">
 </div>
-<div class="well" ng-repeat="user in users | filter:{firstName:search} track by user._id">
-    <h1>Name: {{user.firstName}} {{user.lastName}} </h1>
-    <h3>Email: {{user.email}} </h3>
-    <h3>Portfolio Link: {{ user.link }}</h3>
-    <p> {{ user._id }}</p>
-    <p>**Comment out edit/delete this is public**</p>
-    <a ng-href="/users/{{user._id}}">Show User Details</a>
-<!-- <a ng-href="/users/edit/{{user._id}}">Edit User Details</a>
- --><!-- <a ng-click="deleteUser(user._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a>
- -->
+<div ng-repeat="user in users | filter:{firstName:search} track by user._id">
+    <div class="card card-panel teal darken-4">
+        <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" id="profilepic" src="img/profile.png" alt="profile pic">
+        </div>
+        <div class="card-content">
+            <h1 class="cardfront">Name: {{user.firstName}} {{user.lastName}} </h1>
+            <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+        </div>
+        <div class="card-reveal card-panel grey lighten-2">
+            <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+            <h3>Email: {{user.email}} </h3>
+            <a ng-href="{{user.link}}">{{user.link}}</a>
+            <p> {{ user._id }}</p>
+            <a ng-href="/users/{{user._id}}">Show User Details</a>
+        </div>
+    </div>
 </div>
+<!-- <a ng-href="/users/edit/{{user._id}}">Edit User Details</a>
+ -->
+<!-- <a ng-click="deleteUser(user._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a>
+ -->
