@@ -7,44 +7,56 @@
 </div>
 <a href="/" class="btn btn-primary">&larr; Back</a> -->
 <!-- *** Edit Project Page -->
-<h1>Show A Project</h1>
+<!-- <h1>Show A Project</h1>
 <form ng-submit="updateProject()">
     <h5>Project Owner: {{ project.owner }}</h5>
-    <!-- Name of Project-->
-    <div class="form-group">
+ -->
+<!-- Name of Project-->
+<!--     <div class="form-group">
         <label for="name">Name of Project</label>
         <input type="text" class="form-control" id="name" ng-model="project.name" readonly> {{project.name}}
     </div>
-    <!-- Description -->
-    <div class="form-group">
+ -->
+<!-- Description -->
+<!--     <div class="form-group">
         <label for="description">Description</label>
         <textarea class="form-control" id="description" ng-model="project.description" readonly></textarea>
     </div>
-    <!-- Due Date -->
-    <div class="form-group">
+ -->
+<!-- Due Date -->
+<!--     <div class="form-group">
         <label for="dueDate">Due Date</label>
         <input type="date" class="form-control" id="date" ng-model="project.dueDate" readonly>
     </div>
-    <!-- User ID -->
-    <!-- This is unnecessary because it will be submitted according to the user based on their login -->
-    <div class="form-group">
+ -->
+<!-- User ID -->
+<!-- This is unnecessary because it will be submitted according to the user based on their login -->
+<!--     <div class="form-group">
         <label for="userId">User Id</label>
         <input type="text" class="form-control" id="userId" placeholder="User Id" ng-model="project.userId" readonly>
     </div>
-    <!-- Tech Requested -->
-    <div class="form-group">
+ -->
+<!-- Tech Requested -->
+<!--     <div class="form-group">
         <label for="techReq">Requested Technologies</label>
         <input type="text" class="form-control" id="techReq" placeholder="Technologies" ng-model="project.techReq" readonly> {{project.techReq}}
     </div>
-    <!-- Show to Public -->
-    <div class="form-group">
+ -->
+<!-- Show to Public -->
+<!--     <div class="form-group">
         <label for="showPublic">Show to Public</label>
         <input type="checkbox" id="showPublic" placeholder="showPublic" ng-model="project.showPublic" readonly>
     </div>
-    <!-- Submit Button SERVES NO FUNCTIONALITY-->
-    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-    <!-- Back Button -->
-    <a class="backbtn" href="/projects">&larr; Back to Bulletin Board</a>
+ -->
+<!-- Submit Button SERVES NO FUNCTIONALITY-->
+<!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+<!-- Back Button -->
 </form>
 <div>
+    <h1>Project details</h1>
+    <h2>Project owner: {{ project.owner }}</h2>
+    <p>Project description: {{project.description}}</p>
+    <h4>Project due date: {{project.dueDate | date}}</h4>
+    <h5>Technologies Requested: {{project.techReq}}</h5>
 </div>
+<a class="backbtn" href="/projects">&larr; Back to Bulletin Board</a>
