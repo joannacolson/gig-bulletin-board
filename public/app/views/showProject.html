@@ -51,10 +51,11 @@
 <!-- Submit Button SERVES NO FUNCTIONALITY-->
 <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 <!-- Back Button -->
-</form>
+<!-- </form> -->
 <div>
     <h1>Project details</h1>
-    <h2>Project owner: {{ project.owner }}</h2>
+    <h2>Project {{project.name}}</h2>
+    <h3>Project owner: {{ project.owner }}</h3>
     <p>Project description: {{project.description}}</p>
     <h4>Project due date: {{project.dueDate | date}}</h4>
     <h5>Technologies Requested: {{project.techReq}}</h5>
