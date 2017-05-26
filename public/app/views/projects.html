@@ -6,8 +6,11 @@
     <input type="text" class="form-control" id="search" ng-model="search">
 </div>
 <div class="well" ng-repeat="project in projects | filter:{name:search} track by project._id">
-    <h1>{{project.name}}</h1>
-    <h3>{{project.description}} </h3>
+    <!-- Add project owner -->
+    <h1>Project: {{project.name}}</h1>
+    <h3>Description: {{project.description}} </h3>
+    <h5>Tech Required: {{project.techReq}}</h5>
+    <h7>User Id: {{ project.userId }}</h7>
     <p>**Comment out edit/delete this is public**</p>
     <a ng-href="/projects/{{project._id}}">Show Project Details</a>
     <a ng-href="/projects/edit/{{project._id}}">Edit Project Details</a>
