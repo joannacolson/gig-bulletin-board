@@ -41,7 +41,7 @@
     </div> -->
 <!-- <button type="submit" class="btn btn-primary">Submit Changes</button> -->
 <!-- </form> -->
-
+<!-- </form> -->
 <div>
     <legend>Showing your User Profile</legend>
     <h2>{{user.firstName}} {{user.lastName}}</h2>
@@ -50,7 +50,8 @@
     <a ng-href="{{user.link}}">{{user.link}}</a>
 </div>
 <a class="backbtn" href="/user">&larr; Back to Bulletin Board</a>
-
+<hr>
+<!-- DO WE NEED THIS EXTRA EDIT USER LINK BELOW? -->
+<!-- <a ng-href="/users/edit/{{user._id}}">Edit Profile</a> -->
 <hr>
 <a ng-href="/users/edit/{{user._id}}" ng-show="isCurrentUser(user._id)">Edit Profile</a>
-
