@@ -13,7 +13,7 @@
     <!-- Name of Project-->
     <div class="form-group">
         <label for="name">Name of Project</label>
-        <input type="text" class="form-control" id="name" ng-model="project.name" readonly>
+        <input type="text" class="form-control" id="name" ng-model="project.name" readonly> {{project.name}}
     </div>
     <!-- Description -->
     <div class="form-group">
@@ -34,7 +34,7 @@
     <!-- Tech Requested -->
     <div class="form-group">
         <label for="techReq">Requested Technologies</label>
-        <input type="text" class="form-control" id="techReq" placeholder="Technologies" ng-model="project.techReq" readonly>
+        <input type="text" class="form-control" id="techReq" placeholder="Technologies" ng-model="project.techReq" readonly> {{project.techReq}}
     </div>
     <!-- Show to Public -->
     <div class="form-group">
@@ -42,5 +42,7 @@
         <input type="checkbox" id="showPublic" placeholder="showPublic" ng-model="project.showPublic" readonly>
     </div>
     <!-- Submit Button -->
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    <!-- Back Button -->
+    <a class="backbtn" href="/projects">&larr; Back to Bulletin Board</a>
 </form>
