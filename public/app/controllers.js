@@ -133,7 +133,7 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             });
         };
     }])
-    .controller('ShowUserCtrl', ['$scope', '$stateParams', '$location', 'User', 'Auth', function($scope, $stateParams, $location, User, Auth) {
+    .controller('ShowUserCtrl', ['$scope', '$stateParams', '$location', 'User', 'Auth', 'Project', function($scope, $stateParams, $location, User, Auth, Project) {
         $scope.user = {};
 
         User.get({ id: $stateParams.id }, function success(data) {
@@ -145,16 +145,26 @@ angular.module('ProjectCtrls', ['ProjectServices'])
         $scope.isCurrentUser = function(user_id) {
             return user_id == Auth.currentUser()._id;
         };
-        // Replace this with a different function (or no function at all?)
-        // $scope.updateUser = function() {
-        // Pick up coding here... verify order of parameters below
-        // User.update({ id: $stateParams.id }, $scope.user, function success(data) {
-        //**TO DO: direct user to a different path
-        // $location.path('/projects');
-        // }, function error(data) {
-        // console.log(data);
-        // });
-        // };
+
+        $scope.projects = [];
+
+        //runs a query against the project file when the view loads - this gives us all of the projects
+        Project.query(function success(data) {
+            $scope.projects = data;
+            $scope.projects.forEach(function(project) {
+                project.dueDate = new Date(project.dueDate);
+            });
+        }, function error(data) {
+            console.log(data);
+        });
+
+        $scope.deleteProject = function(id, projectsIdx) {
+            Project.delete({ id: id }, function success(data) {
+                $scope.projects.splice(projectsIdx, 1);
+            }, function error(data) {
+                console.log(data);
+            });
+        };
     }])
     .controller('NavCtrl', ['$scope', 'Auth', function($scope, Auth) {
         //set the variable to whether we are logged in
