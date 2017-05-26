@@ -9,6 +9,7 @@
 <!-- *** Edit Project Page -->
 <h1>Show A Project</h1>
 <form ng-submit="updateProject()">
+    <h5>Business Owner: {{ project.owner }}</h5>
     <!-- Name of Project-->
     <div class="form-group">
         <label for="name">Name of Project</label>
@@ -26,10 +27,10 @@
     </div>
     <!-- User ID -->
     <!-- This is unnecessary because it will be submitted according to the user based on their login -->
-    <!-- <div class="form-group">
+    <div class="form-group">
         <label for="userId">User Id</label>
         <input type="text" class="form-control" id="userId" placeholder="User Id" ng-model="project.userId" readonly>
-    </div> -->
+    </div>
     <!-- Tech Requested -->
     <div class="form-group">
         <label for="techReq">Requested Technologies</label>

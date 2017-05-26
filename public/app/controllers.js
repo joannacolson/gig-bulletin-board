@@ -17,12 +17,20 @@ angular.module('ProjectCtrls', ['ProjectServices'])
             });
         };
     }])
-    .controller('ShowCtrl', ['$scope', '$stateParams', 'Project', function($scope, $stateParams, Project) {
+    .controller('ShowCtrl', ['$scope', '$stateParams', 'Project', 'User', function($scope, $stateParams, Project, User) {
         $scope.project = {};
 
         Project.get({ id: $stateParams.id }, function success(data) {
             $scope.project = data;
             $scope.project.dueDate = new Date(data.dueDate);
+
+            User.get({ id: data.userId }, function success(user) {
+                $scope.project.owner = user.firstName + " " + user.lastName;
+            }, function error(data) {
+                console.log(data);
+            });
+
+
         }, function error(data) {
             console.log(data);
         });

@@ -7,6 +7,7 @@
     <h1>Name: {{user.firstName}} {{user.lastName}} </h1>
     <h3>Email: {{user.email}} </h3>
     <h3>Portfolio Link: {{ user.link }}</h3>
+    <p> {{ user._id }}</p>
     <p>**Comment out edit/delete this is public**</p>
     <a ng-href="/users/{{user._id}}">Show User Details</a>
     <a ng-href="/users/edit/{{user._id}}">Edit User Details</a>
