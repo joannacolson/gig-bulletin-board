@@ -1,20 +1,32 @@
 <!-- This is the bulletin board for projects listings -->
-<h1>Gig Bulletin Board</h1>
-<a href="/projects/new" class="btn btn-success">New Project</a>
-<div class="form-group">
-    <label for="search">Search</label>
-    <input type="text" class="form-control" id="search" ng-model="search">
+<h3 class="center-align">Gig Bulletin Board</h3>
+<div class="divider"></div>
+<div class="section">
+    <a href="/projects/new" class="btn waves-effect waves-light">Add A Project<i class="material-icons right">note_add</i></a>
 </div>
-<div class="well" ng-repeat="project in projects | filter:{name:search} track by project._id">
+<div class="divider"></div>
+<div class="section">
+    <div class="row">
+        <div class="input-field col s12">
+            <input type="text" class="validate" id="search" ng-model="search">
+            <label for="search">Search</label>
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+<div class="section" ng-repeat="project in projects | filter:{name:search} track by project._id">
     <!-- Add project owner -->
-    <h3>Project: {{project.name}}</h3>
-    <p>Description: {{project.description}} </p>
-    <h5>Tech Required: {{project.techReq}}</h5>
-    <h2>Project Owner: {{ project.owner }}</h2>
+    <h5>Project: {{project.name}}</h5>
+    <h6>Description: {{project.description}} </h6>
+    <h6>Tech Required: {{project.techReq}}</h6>
+    <h6>Project Owner: {{ project.owner }}</h6>
     <!-- <h7>User Id: {{ project.userId }}</h7> -->
     <br>
     <!--     <p>**Comment out edit/delete this is public**</p> -->
-    <a target="_blank" ng-href="/projects/{{project._id}}">Project Details</a>
+    <div class="section">
+        <a target="_blank" class="btn waves-effect waves-light" ng-href="/projects/{{project._id}}">Project Details<i class="material-icons right">assignment</i></a>
+    </div>
     <!-- <a ng-href="/projects/edit/{{project._id}}">Edit Project Details</a>
     <a ng-click="deleteProject(project._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a> -->
+    <div class="divider"></div>
 </div>
