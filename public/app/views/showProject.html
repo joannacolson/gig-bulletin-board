@@ -52,12 +52,16 @@
 <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 <!-- Back Button -->
 <!-- </form> -->
-<div>
-    <h1>Project details</h1>
-    <h2>Project {{project.name}}</h2>
-    <h3>Project owner: {{ project.owner }}</h3>
-    <p>Project description: {{project.description}}</p>
-    <h4>Project due date: {{project.dueDate | date}}</h4>
-    <h5>Technologies Requested: {{project.techReq}}</h5>
+<h3 class="center-align">Project Details</h3>
+<div class="divider"></div>
+<div class="section">
+    <h5>Project: {{project.name}}</h5>
+    <h6>Project owner: {{ project.owner }}</h6>
+    <h6>Project description: {{project.description}}</h6>
+    <h6>Project due date: {{project.dueDate | date}}</h6>
+    <h6>Technologies Requested: {{project.techReq}}</h6>
 </div>
-<a class="backbtn" href="/projects">&larr; Back to Bulletin Board</a>
+<div class="divider"></div>
+<div class="section">
+    <a class="btn waves-effect waves-light" href="/projects">Back to Bulletin Board<i class="material-icons left">skip_previous</i></a>
+</div>
