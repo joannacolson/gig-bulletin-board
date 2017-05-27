@@ -15,18 +15,14 @@
 </div>
 <div class="divider"></div>
 <div class="section" ng-repeat="project in projects | filter:{name:search} track by project._id">
-    <!-- Add project owner -->
     <h5>Project: {{project.name}}</h5>
     <h6>Description: {{project.description}} </h6>
     <h6>Tech Required: {{project.techReq}}</h6>
     <h6>Project Owner: {{ project.owner }}</h6>
-    <!-- <h7>User Id: {{ project.userId }}</h7> -->
-    <br>
-    <!--     <p>**Comment out edit/delete this is public**</p> -->
     <div class="section">
-        <a target="_blank" class="btn waves-effect waves-light" ng-href="/projects/{{project._id}}">Project Details<i class="material-icons right">assignment</i></a>
+        <a class="btn waves-effect waves-light" ng-href="/projects/{{project._id}}">Project Details<i class="material-icons right">assignment</i></a>
     </div>
-    <!-- <a ng-href="/projects/edit/{{project._id}}">Edit Project Details</a>
-    <a ng-click="deleteProject(project._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a> -->
+    <!-- <a ng-href="/projects/edit/{{project._id}}">Edit Project Details</a> -->
+    <!-- <a ng-click="deleteProject(project._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a> -->
     <div class="divider"></div>
 </div>
