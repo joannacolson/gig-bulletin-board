@@ -1,14 +1,22 @@
-<form ng-submit="userLogin()">
-  <legend>Login</legend>
-
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="test@test.com" ng-model="user.email">
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="********" ng-model="user.password">
-  </div>
-
-  <button type="submit" class="btn btn-primary">Login</button>
-</form>
+<div class="row">
+    <form class="col s12" ng-submit="userLogin()">
+        <h3>Login</h3>
+        <!-- Email -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="email" class="validate" id="email" ng-model="user.email" required>
+                <label for="email" data-error="invalid email address" data-success="OK">Email</label>
+            </div>
+        </div>
+        <!-- Password -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="password" class="validate" id="password" ng-model="user.password" required>
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Login
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>
