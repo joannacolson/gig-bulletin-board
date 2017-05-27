@@ -1,34 +1,50 @@
-<form ng-submit="userSignup()">
-    <legend>Signup</legend>
-    <!-- First Name -->
-    <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" placeholder="First Name" ng-model="user.firstName" required>
-    </div>
-    <!-- Last Name -->
-    <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Last Name" ng-model="user.lastName" required>
-    </div>
-    <!-- Phone -->
-    <div class="form-group">
-        <label for="phone">Phone</label>
-        <input type="text" class="form-control" id="phone" placeholder="Phone Number" ng-model="user.phone">
-    </div>
-    <!-- User's Link to Portfolio Page -->
-    <div class="form-group">
-        <label for="link">Portfolio Link</label>
-        <input type="text" class="form-control" id="link" placeholder="Link" ng-model="user.link">
-    </div>
-    <!-- Email -->
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="test@test.com" ng-model="user.email" required>
-    </div>
-    <!-- Password -->
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="********" ng-model="user.password" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Signup</button>
-</form>
+<div class="row">
+    <form class="col s12" ng-submit="userSignup()">
+        <h3>Signup<h3>
+        <!-- First Name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" class="validate" id="firstName" ng-model="user.firstName" required>
+                <label for="firstName">First Name</label>
+            </div>
+        </div>
+        <!-- Last Name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" class="validate" id="lastName" ng-model="user.lastName" required>
+                <label for="lastName">Last Name</label>
+            </div>
+        </div>
+        <!-- Phone -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" class="validate" id="phone" ng-model="user.phone" required>
+                <label for="phone">Phone</label>
+            </div>
+        </div>
+        <!-- User's Link to Portfolio Page -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" class="validate" id="link" ng-model="user.link" required>
+                <label for="link">Portfolio Link</label>
+            </div>
+        </div>
+        <!-- Email -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="email" class="validate" id="email" ng-model="user.email" required>
+                <label for="email" data-error="invalid email address" data-success="OK">Email</label>
+            </div>
+        </div>
+        <!-- Password -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="password" class="validate" id="password" ng-model="user.password" required>
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Signup
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>
