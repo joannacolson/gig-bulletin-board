@@ -1,34 +1,43 @@
-<form ng-submit="updateUser()">
-    <legend>Edit your User Info</legend>
-    <!-- First Name -->
-    <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" placeholder="First Name" ng-model="user.firstName">
-    </div>
-    <!-- Last Name -->
-    <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Last Name" ng-model="user.lastName">
-    </div>
-    <!-- Phone -->
-    <div class="form-group">
-        <label for="phone">Phone</label>
-        <input type="text" class="form-control" id="phone" placeholder="Phone Number" ng-model="user.phone">
-    </div>
-    <!-- User's Link to Portfolio Page -->
-    <div class="form-group">
-        <label for="link">Link</label>
-        <input type="text" class="form-control" id="link" placeholder="Link" ng-model="user.link">
-    </div>
-    <!-- Email -->
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="test@test.com" ng-model="user.email">
-    </div>
-    <!-- Password -->
-    <!--     <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="********" ng-model="user.password">
-    </div> -->
-    <button type="submit" class="btn btn-primary">Submit Changes</button>
-</form>
+<div class="row">
+    <form class="col s12" ng-submit="updateUser()">
+        <h3>Edit your User Information</h3>
+        <!-- First Name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" class="validate" id="firstName" ng-model="user.firstName" required>
+                <label class="active" for="firstName">First Name</label>
+            </div>
+        </div>
+        <!-- Last Name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" class="validate" id="lastName" ng-model="user.lastName" required>
+                <label class="active" for="lastName">Last Name</label>
+            </div>
+        </div>
+        <!-- Phone -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" class="validate" id="phone" ng-model="user.phone">
+                <label class="active" for="phone">Phone</label>
+            </div>
+        </div>
+        <!-- User's Link to Portfolio Page -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" class="validate" id="link" ng-model="user.link">
+                <label class="active" for="link">Portfolio Link</label>
+            </div>
+        </div>
+        <!-- Email -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="email" class="validate" id="email" ng-model="user.email" required>
+                <label class="active" for="email" data-error="invalid email address" data-success="OK">Email</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit Edits
+            <i class="material-icons right">mode_edit</i>
+        </button>
+    </form>
+</div>
