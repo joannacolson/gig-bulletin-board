@@ -19,3 +19,7 @@ h1 {
 .cardfront {
     color: white;
 }
+
+.nav-container {
+    width: 100%;
+}
