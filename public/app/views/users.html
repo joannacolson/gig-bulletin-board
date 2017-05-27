@@ -4,12 +4,12 @@
     <input type="text" class="form-control" id="search" ng-model="search">
 </div>
 <div ng-repeat="user in users | filter:{firstName:search} track by user._id">
-    <div class="card card-panel teal darken-4">
+    <div class="card card-panel teal lighten-3">
         <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" id="profilepic" src="img/profile.png" alt="profile pic">
         </div>
         <div class="card-content">
-            <h1 class="cardfront">Name: {{user.firstName}} {{user.lastName}} </h1>
+            <h1 class="cardfront">User: {{user.firstName}} {{user.lastName}} </h1>
             <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
         </div>
         <div class="card-reveal card-panel grey lighten-2">

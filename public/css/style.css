@@ -32,3 +32,9 @@ h1 {
 #404 {
     background-color: #616161;
 }
+
+.alert {
+    margin: 0;
+    height: 2em;
+    text-align: center;
+}
