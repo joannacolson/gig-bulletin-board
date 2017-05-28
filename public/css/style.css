@@ -1,7 +1,7 @@
 /*--------Global--------*/
 
 html {
-    background-color: #e0f2f1;
+    background-color: #b2dfdb;
 }
 
 h3 {
@@ -61,12 +61,6 @@ ul.navlinks {
     font-family: 'Space Mono', monospace;
 }
 
-.divider {
-    position: absolute;
-    right: -1px;
-    top: 2px;
-}
-
 
 /*--------Buttons--------*/
 
@@ -111,8 +105,7 @@ h1 {
     width: 100%;
     height: 100%;
     position: fixed;
-    left: 1px;
-    /*right: 1px;*/
+    left: 0px;
     top: 0px;
     z-index: -1;
     padding: 0;
@@ -135,7 +128,7 @@ h1 {
 }
 
 .quote h4 {
-    font-size: 60px;
+    font-size: 50px;
     color: #e6ee9c;
     text-align: center;
 }
@@ -183,6 +176,49 @@ h1 {
 }
 
 
-/*-----------Media Queries--------*/
+/*-----------Footer--------*/
 
-@media
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 1rem;
+    background-color: #004d40;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.developers {
+    color: #e0f2f1;
+    font-size: 1.3em;
+    font-family: 'Space Mono', monospace;
+}
+
+.social-icons {
+    font-size: 4em;
+}
+
+.footer-icons {
+    margin: 0 .5em;
+    animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+    33% {
+        color: #afb42b;
+    }
+    66% {
+        background-color: #004d40;
+    }
+}
+
+
+/*.fa:hover {
+    color: #afb42b;
+}*/
+
+
+/*-----------Media Queries--------*/
