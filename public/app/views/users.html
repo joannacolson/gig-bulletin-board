@@ -10,18 +10,18 @@
 </div>
 <div class="divider"></div>
 <div class="section" ng-repeat="user in users | filter:{firstName:search} track by user._id">
-    <div class="card card-panel teal lighten-3">
+    <div class="card card-panel hoverable teal darken-2">
         <img class="activator" id="profilepic" src="img/profile.png" alt="profile pic">
         <div class="card-content">
             <h3 class="cardfront center">User: {{user.firstName}} {{user.lastName}}</h3>
-            <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+            <span class="card-title activator grey-text text-darken-4"><i class="more_vert material-icons right">more_vert</i></span>
         </div>
         <div class="card-reveal card-panel teal lighten-5">
-            <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+            <span class="card-title activator grey-text text-darken-4"><i class="more_vert material-icons right">more_vert</i></span>
             <h4>Email: {{user.email}} </h4>
             <h4>Portfolio Link: <a target="_blank" ng-href="{{user.link}}">{{user.link}}</a></h4>
             <div class="section">
-                <a class="btn waves-effect waves-light" ng-href="/users/{{user._id}}">User Details<i class="material-icons right">assignment_ind</i></a>
+                <a class="btn waves-effect waves-light lime darken-4" ng-href="/users/{{user._id}}">User Details<i class="material-icons right">assignment_ind</i></a>
             </div>
         </div>
     </div>
