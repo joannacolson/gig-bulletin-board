@@ -6,6 +6,7 @@ html {
 
 h3 {
     font-family: 'Space Mono', monospace;
+    font-weight: bold;
 }
 
 .container {
@@ -13,12 +14,17 @@ h3 {
 }
 
 
-/*--------Alerts--------*/
+/*--------Alerts & 404 --------*/
 
 .alert {
     margin: 0;
     height: 2em;
     text-align: center;
+}
+
+.fourOfour {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
 }
 
 
@@ -29,7 +35,7 @@ nav {
 }
 
 .fa-thumb-tack {
-    color: #80cbc4;
+    color: #00bfa5;
     font-size: 4rem;
 }
 
@@ -46,8 +52,8 @@ nav {
 }
 
 .mission {
-    color: yellow;
-    font-size: 20px;
+    color: #afb42b;
+    font-size: 27px;
     font-weight: bold;
 }
 
@@ -67,11 +73,6 @@ ul.navlinks {
 .btn {
     background-color: #00695c;
 }
-
-
-/*.deletebtn {
-    background-color: red;
-}*/
 
 
 /*--------Users Listing--------*/
@@ -126,11 +127,16 @@ h1 {
 /*----Rotating Quotes----*/
 
 .quote {
-    color: yellow;
     position: absolute;
     opacity: 0;
     -moz-opacity: 0;
     filter: alpha(opacity=0);
+    text-align: center;
+}
+
+.quote h4 {
+    font-size: 60px;
+    color: #e6ee9c;
     text-align: center;
 }
 
