@@ -1,9 +1,9 @@
 <div ng-controller="AlertsController">
     <div ng-repeat="alert in alerts()">
-        <div class="red lighten-2" ng-if="alert.type == 'error'">
+        <div class="red lighten-4" ng-if="alert.type == 'error'">
             <h5 class="alert">{{ alert.msg }}</h5>
         </div>
-        <div class="green lighten-2" ng-if="alert.type == 'success'">
+        <div class="teal lighten-4" ng-if="alert.type == 'success'">
             <h5 class="alert"> {{ alert.msg }}</h5>
         </div>
     </div>

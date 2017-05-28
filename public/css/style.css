@@ -1,8 +1,85 @@
+/*--------Global--------*/
+
+html {
+    background-color: #e0f2f1;
+}
+
+h3 {
+    font-family: 'Space Mono', monospace;
+    font-weight: bold;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+
+/*--------Alerts & 404 --------*/
+
+.alert {
+    margin: 0;
+    height: 2em;
+    text-align: center;
+}
+
+.fourOfour {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+}
+
+
+/*--------Navbar/ index.html--------*/
+
+nav {
+    background-color: black;
+}
+
+.fa-thumb-tack {
+    color: #00bfa5;
+    font-size: 4rem;
+}
+
+#nav-gigBB {
+    margin-left: 1em;
+    font-size: 1.8rem;
+}
+
+.brand-logo {
+    /*    font-family: 'Patrick Hand SC', cursive;
+*/
+    font-family: 'Codystar', cursive;
+    font-weight: bold;
+}
+
+.mission {
+    color: #afb42b;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+ul.navlinks {
+    font-family: 'Space Mono', monospace;
+}
+
+.divider {
+    position: absolute;
+    right: -1px;
+    top: 2px;
+}
+
+
+/*--------Buttons--------*/
+
+.btn {
+    background-color: #00695c;
+}
+
+
+/*--------Users Listing--------*/
+
 h1 {
     color: ;
 }
-
-.card {}
 
 #profilepic {
     height: 50px;
@@ -20,13 +97,6 @@ h1 {
 }
 
 
-/*--------index.html----*/
-
-#nav-gigBB {
-    margin-left: 1em;
-}
-
-
 /*------------404----------*/
 
 #404 {
@@ -36,19 +106,38 @@ h1 {
 
 /*---teampic---*/
 
-#.teampic {
-    margin-top: 2em;
+#teampic {
+    background: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 1px;
+    /*right: 1px;*/
+    top: 0px;
+    z-index: -1;
+    padding: 0;
+}
+
+#collaboration {
+    padding: 0;
+    height: 600px;
 }
 
 
 /*----Rotating Quotes----*/
 
 .quote {
-    color: yellow;
     position: absolute;
     opacity: 0;
     -moz-opacity: 0;
     filter: alpha(opacity=0);
+    text-align: center;
+}
+
+.quote h4 {
+    font-size: 60px;
+    color: #e6ee9c;
+    text-align: center;
 }
 
 @-webkit-keyframes "quoteshift" {
@@ -70,23 +159,30 @@ h1 {
 }
 
 .quote:nth-child(1) {
-    -webkit-animation: quoteshift 8s 0s infinite linear;
+    -webkit-animation: quoteshift 16s 0s infinite linear;
 }
 
 .quote:nth-child(2) {
-    -webkit-animation: quoteshift 8s 2s infinite linear;
+    -webkit-animation: quoteshift 16s 4s infinite linear;
 }
 
 .quote:nth-child(3) {
-    -webkit-animation: quoteshift 8s 4s infinite linear;
+    -webkit-animation: quoteshift 16s 8s infinite linear;
 }
 
 .quote:nth-child(4) {
-    -webkit-animation: quoteshift 8s 6s infinite linear;
-  
-.alert {
-    margin: 0;
-    height: 2em;
-    text-align: center;
-
+    -webkit-animation: quoteshift 16s 12s infinite linear;
 }
+
+
+/*-----------users.html--------*/
+
+.more_vert {
+    color: #1de9b6;
+    font-size: 2.5em;
+}
+
+
+/*-----------Media Queries--------*/
+
+@media

@@ -13,15 +13,11 @@
 </div>
 <div class="divider"></div>
 <div class="section">
-    <a class="btn waves-effect waves-light" href="/users">Back to Users Listing<i class="material-icons left">skip_previous</i></a>
+    <a class="btn waves-effect waves-light  blue darken-4" href="/users">Back to Users Listing<i class="material-icons left">skip_previous</i></a>
 </div>
 <div class="divider"></div>
 <!-- This is the projects listings for this user -->
 <h4 class="center-align">Your Projects</h4>
-<div class="divider"></div>
-<div class="section">
-    <a href="/projects/new" class="btn waves-effect waves-light">Add A Project<i class="material-icons right">note_add</i></a>
-</div>
 <div class="divider"></div>
 <div class="section">
     <div class="row">
@@ -32,19 +28,23 @@
     </div>
 </div>
 <div class="divider"></div>
+<div class="section center">
+    <a href="/projects/new" class="btn waves-effect waves-light green darken-4">Add A Project<i class="material-icons right">note_add</i></a>
+</div>
+<div class="divider"></div>
 <div class="section" ng-repeat="project in projects | filter:{userId:user._id} | filter:{name:search} track by project._id">
     <h5>Project: {{project.name}}</h5>
     <h6>Description: {{project.description}}</h6>
     <h6>Project due date: {{project.dueDate | date}}</h6>
     <h6>Tech Required: {{project.techReq}}</h6>
     <div class="section">
-        <a class="btn waves-effect waves-light" ng-href="/projects/{{project._id}}">Show Project Details<i class="material-icons right">assignment</i></a>
+        <a class="btn waves-effect waves-light light-blue darken-4" ng-href="/projects/{{project._id}}">Show Project Details<i class="material-icons right">assignment</i></a>
     </div>
     <div class="section">
-        <a class="btn waves-effect waves-light" ng-href="/projects/edit/{{project._id}}">Edit Project Details<i class="material-icons right">mode_edit</i></a>
+        <a class="btn waves-effect waves-light  cyan darken-4" ng-href="/projects/edit/{{project._id}}">Edit Project Details<i class="material-icons right">mode_edit</i></a>
     </div>
     <div class="section">
-        <a class="btn waves-effect waves-light" ng-click="deleteProject(project._id, $index)">Delete Project<i class="material-icons right">delete</i></a>
+        <a class="btn waves-effect waves-light red darken-4" ng-click="deleteProject(project._id, $index)">Delete Project<i class="material-icons right">delete</i></a>
     </div>
     <div class="divider"></div>
 </div>
