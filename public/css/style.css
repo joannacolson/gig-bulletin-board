@@ -32,3 +32,55 @@ h1 {
 #404 {
     background-color: #616161;
 }
+
+
+/*---teampic---*/
+
+#.teampic {
+    margin-top: 2em;
+}
+
+
+/*----Rotating Quotes----*/
+
+.quote {
+    color: yellow;
+    position: absolute;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+@-webkit-keyframes "quoteshift" {
+    0% {
+        opacity: 0;
+    }
+    2% {
+        opacity: 1;
+    }
+    21% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.quote:nth-child(1) {
+    -webkit-animation: quoteshift 8s 0s infinite linear;
+}
+
+.quote:nth-child(2) {
+    -webkit-animation: quoteshift 8s 2s infinite linear;
+}
+
+.quote:nth-child(3) {
+    -webkit-animation: quoteshift 8s 4s infinite linear;
+}
+
+.quote:nth-child(4) {
+    -webkit-animation: quoteshift 8s 6s infinite linear;
+}
