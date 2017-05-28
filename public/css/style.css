@@ -1,7 +1,11 @@
 /*--------Global--------*/
 
-html {
+body {
     background-color: #b2dfdb;
+}
+
+main {
+    min-height: 500px;
 }
 
 h3 {
@@ -11,10 +15,6 @@ h3 {
 
 .container {
     margin: 0 auto;
-}
-
-body {
-    min-height: 7
 }
 
 
