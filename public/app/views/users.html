@@ -1,25 +1,31 @@
-<h1>Users Index Listing</h1>
-<div class="row">
-    <label for="search">Search</label>
-    <input type="text" class="form-control" id="search" ng-model="search">
-</div>
-<div ng-repeat="user in users | filter:{firstName:search} track by user._id">
-    <div class="card card-panel teal darken-4">
-        <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" id="profilepic" src="img/profile.png" alt="profile pic">
-        </div>
-        <div class="card-content">
-            <h1 class="cardfront">Name: {{user.firstName}} {{user.lastName}} </h1>
-            <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
-        </div>
-        <div class="card-reveal card-panel grey lighten-2">
-            <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
-            <h3>Email: {{user.email}} </h3>
-            <a ng-href="{{user.link}}">{{user.link}}</a>
-            <p> {{ user._id }}</p>
-            <a ng-href="/users/{{user._id}}">Show User Details</a>
+<h3 class="center-align">Users Listing</h3>
+<div class="divider"></div>
+<div class="section">
+    <div class="row">
+        <div class="input-field col s12">
+            <input type="text" class="validate" id="search" ng-model="search">
+            <label for="search">Search</label>
         </div>
     </div>
+</div>
+<div class="divider"></div>
+<div class="section" ng-repeat="user in users | filter:{firstName:search} track by user._id">
+    <div class="card card-panel teal lighten-3">
+        <img class="activator" id="profilepic" src="img/profile.png" alt="profile pic">
+        <div class="card-content">
+            <h3 class="cardfront center">User: {{user.firstName}} {{user.lastName}}</h3>
+            <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+        </div>
+        <div class="card-reveal card-panel teal lighten-5">
+            <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+            <h4>Email: {{user.email}} </h4>
+            <h4>Portfolio Link: <a target="_blank" ng-href="{{user.link}}">{{user.link}}</a></h4>
+            <div class="section">
+                <a class="btn waves-effect waves-light" ng-href="/users/{{user._id}}">User Details<i class="material-icons right">assignment_ind</i></a>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
 </div>
 <!-- <a ng-href="/users/edit/{{user._id}}">Edit User Details</a>
  -->

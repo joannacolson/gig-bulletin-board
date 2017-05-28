@@ -83,4 +83,10 @@ h1 {
 
 .quote:nth-child(4) {
     -webkit-animation: quoteshift 8s 6s infinite linear;
+  
+.alert {
+    margin: 0;
+    height: 2em;
+    text-align: center;
+
 }

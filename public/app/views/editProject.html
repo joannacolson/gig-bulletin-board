@@ -12,7 +12,7 @@
         <!-- Description -->
         <div class="row">
             <div class="input-field col s12">
-                <textarea type="text" class="validate" id="description" ng-model="project.description" required></textarea>
+                <textarea class="validate" id="description" ng-model="project.description" required></textarea>
                 <label class="active" for="description">Description</label>
             </div>
         </div>
@@ -23,14 +23,6 @@
                 <label class="active" for="dueDate">Due Date</label>
             </div>
         </div>
-        <!-- User ID -->
-        <!-- This is unnecessary because it will be submitted according to the user based on their login -->
-        <!-- <div class="row">
-            <div class="input-field col s12">
-                <input type="text" class="validate" id="userId" ng-model="project.userId">
-                <label class="active" for="userId">User Id</label>
-            </div>
-        </div> -->
         <!-- Tech Requested -->
         <div class="row">
             <div class="input-field col s12">
@@ -38,13 +30,6 @@
                 <label class="active" for="techReq">Requested Technologies</label>
             </div>
         </div>
-        <!-- Show to Public -->
-        <!-- <div class="row">
-            <div class="input-field col s12">
-            <input type="checkbox" id="showPublic" placeholder="showPublic" ng-model="project.showPublic">
-            <label for="showPublic">Show to Public</label>
-            </div>
-        </div> -->
         <!-- Submit Button -->
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit Edits
             <i class="material-icons right">mode_edit</i>
