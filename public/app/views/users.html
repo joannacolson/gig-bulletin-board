@@ -13,13 +13,13 @@
     <div class="card card-panel teal lighten-3">
         <img class="activator" id="profilepic" src="img/profile.png" alt="profile pic">
         <div class="card-content">
-            <h3 class="cardfront center">User: {{user.firstName}} {{user.lastName}} </h3>
+            <h3 class="cardfront center">User: {{user.firstName}} {{user.lastName}}</h3>
             <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
         </div>
         <div class="card-reveal card-panel teal lighten-5">
             <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
             <h4>Email: {{user.email}} </h4>
-            <h4><a target="_blank" ng-href="{{user.link}}">Portfolio Link: {{user.link}}</a></h4>
+            <h4>Portfolio Link: <a target="_blank" ng-href="{{user.link}}">{{user.link}}</a></h4>
             <div class="section">
                 <a class="btn waves-effect waves-light" ng-href="/users/{{user._id}}">User Details<i class="material-icons right">assignment_ind</i></a>
             </div>
