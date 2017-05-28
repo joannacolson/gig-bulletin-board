@@ -199,12 +199,12 @@ angular.module('ProjectCtrls', ['ProjectServices'])
                     console.log('response from server when logging in:', res);
                     Auth.saveToken(res.data.token);
                     Alerts.add('success', 'You are now logged in successfully.');
-                    $timeout(clearAlerts, 5500);
+                    $timeout(clearAlerts, 4000);
                     $location.path('/projects'); // redirect logged-in user to bboard page
                 }, function error(res) {
                     console.log('Something went wrong', res);
                     Alerts.add('error', 'Bad Login Info, Please Try Again.');
-                    $timeout(clearAlerts, 5500);
+                    $timeout(clearAlerts, 4000);
                 });
             }, function error(res) {
                 console.log('Error while signing up', res);
@@ -225,12 +225,12 @@ angular.module('ProjectCtrls', ['ProjectServices'])
                 console.log('response from server when logging in:', res);
                 Auth.saveToken(res.data.token);
                 Alerts.add('success', 'You are now logged in successfully.');
-                $timeout(clearAlerts, 5500);
+                $timeout(clearAlerts, 4000);
                 $location.path('/projects'); // redirect logged-in user to bboard page
             }, function error(res) {
                 console.log('Something went wrong', res);
                 Alerts.add('error', 'Bad Login Info, Please Try Again.');
-                $timeout(clearAlerts, 5500);
+                $timeout(clearAlerts, 4000);
             });
         };
     }])
