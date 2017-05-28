@@ -1,81 +1,50 @@
-<!-- <h1>Profile Page</h1>
-<h2>User Data</h2>
-<label>Add Project</label> -->
-<!-- needs to be revised to only show data -->
-<!-- <form ng-submit="updateUser()"> -->
-<!-- <legend>Showing your User Profile</legend> -->
-<!-- First Name -->
-<!--     <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" placeholder="First Name" ng-model="user.firstName" readonly>
-    </div>
- -->
-<!-- Last Name -->
-<!--     <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Last Name" ng-model="user.lastName" readonly>
-    </div>
- -->
-<!-- Phone -->
-<!--     <div class="form-group">
-        <label for="phone">Phone</label>
-        <input type="text" class="form-control" id="phone" placeholder="Phone Number" ng-model="user.phone" readonly>
-    </div>
- -->
-<!-- User's Link to Portfolio Page -->
-<!--     <div class="form-group">
-        <label for="link">Link</label>
-        <input type="text" class="form-control" id="link" placeholder="Link" ng-model="user.link" readonly>
-    </div>
- -->
-<!-- Email -->
-<!--     <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="test@test.com" ng-model="user.email" readonly>
-    </div>
- -->
-<!-- Password -->
-<!--     <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="********" ng-model="user.password" readonly>
-    </div> -->
-<!-- <button type="submit" class="btn btn-primary">Submit Changes</button> -->
-<!-- </form> -->
-<!-- </form> -->
-<!-- DO WE NEED THIS EXTRA EDIT USER LINK BELOW? -->
-<!-- <a ng-href="/users/edit/{{user._id}}">Edit Profile</a> -->
-<div>
-    <legend>Showing your User Profile</legend>
-    <h2>{{user.firstName}} {{user.lastName}}</h2>
-    <h3>{{user.phone}}</h3>
-    <p>{{user.email}}</p>
-    <a ng-href="{{user.link}}">{{user.link}}</a>
+<h3 class="center-align">Your User Profile</h3>
+<div class="divider"></div>
+<div class="section">
+    <h5>User: {{user.firstName}} {{user.lastName}}</h5>
+    <h6>Phone: {{user.phone}}</h6>
+    <h6>Email: {{user.email}}</h6>
+    <h5>Portfolio Link: <a target="_blank" ng-href="{{user.link}}">{{user.link}}</a></h5>
 </div>
-
-<a class="btn-floating btn-large green" ng-href="/users/edit/{{user._id}}" ng-show="isCurrentUser(user._id)">
-    <i class="large material-icons">mode_edit</i>
-</a>
-<hr>
-<a class="btn" href="/users">&larr; Back to Users Listing</a>
-
-<hr>
-<a ng-href="/users/edit/{{user._id}}" ng-show="isCurrentUser(user._id)">Edit Profile</a>
-<hr>
-<!-- This is the bulletin board for projects listings -->
-<h1>Your Projects</h1>
-<a href="/projects/new" class="btn btn-success">New Project</a>
-<div class="form-group">
-    <label for="search">Search Projects</label>
-    <input type="text" class="form-control" id="search" ng-model="search">
+<div class="divider"></div>
+<div class="section">
+    <a class="btn waves-effect waves-light" ng-href="/users/edit/{{user._id}}" ng-show="isCurrentUser(user._id)">Edit User Profile
+        <i class="large material-icons">mode_edit</i></a>
 </div>
-<div class="well" ng-repeat="project in projects | filter:{userId:user._id} | filter:{name:search} track by project._id">
-    <h3>Project: {{project.name}}</h3>
-    <p>Description: {{project.description}} </p>
-    <h4>Project due date: {{project.dueDate | date}}</h4>
-    <h5>Tech Required: {{project.techReq}}</h5>
-    <br>
-    <a target="_blank" ng-href="/projects/{{project._id}}">Show Project Details</a>
-    <a ng-href="/projects/edit/{{project._id}}">Edit Project Details</a>
-    <a ng-click="deleteProject(project._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right">Delete Project</a>
+<div class="divider"></div>
+<div class="section">
+    <a class="btn waves-effect waves-light" href="/users">Back to Users Listing<i class="material-icons left">skip_previous</i></a>
 </div>
-
+<div class="divider"></div>
+<!-- This is the projects listings for this user -->
+<h4 class="center-align">Your Projects</h4>
+<div class="divider"></div>
+<div class="section">
+    <a href="/projects/new" class="btn waves-effect waves-light">Add A Project<i class="material-icons right">note_add</i></a>
+</div>
+<div class="divider"></div>
+<div class="section">
+    <div class="row">
+        <div class="input-field col s12">
+            <input type="text" class="validate" id="search" ng-model="search">
+            <label for="search">Search Projects</label>
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+<div class="section" ng-repeat="project in projects | filter:{userId:user._id} | filter:{name:search} track by project._id">
+    <h5>Project: {{project.name}}</h5>
+    <h6>Description: {{project.description}}</h6>
+    <h6>Project due date: {{project.dueDate | date}}</h6>
+    <h6>Tech Required: {{project.techReq}}</h6>
+    <div class="section">
+        <a class="btn waves-effect waves-light" ng-href="/projects/{{project._id}}">Show Project Details<i class="material-icons right">assignment</i></a>
+    </div>
+    <div class="section">
+        <a class="btn waves-effect waves-light" ng-href="/projects/edit/{{project._id}}">Edit Project Details<i class="material-icons right">mode_edit</i></a>
+    </div>
+    <div class="section">
+        <a class="btn waves-effect waves-light" ng-click="deleteProject(project._id, $index)">Delete Project<i class="material-icons right">delete</i></a>
+    </div>
+    <div class="divider"></div>
+</div>
