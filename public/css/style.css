@@ -13,6 +13,10 @@ h3 {
     margin: 0 auto;
 }
 
+body {
+    min-height: 7
+}
+
 
 /*--------Alerts & 404 --------*/
 
@@ -51,10 +55,19 @@ nav {
     font-weight: bold;
 }
 
-.mission {
-    color: #afb42b;
-    font-size: 27px;
+.missiondiv {
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+#mission {
+    color: rgba(175, 180, 43, 1);
+    font-size: 25px;
     font-weight: bold;
+    margin-top: 8em;
+    z-index: 0;
+    /*font-family: 'Shadows Into Light', cursive;*/
 }
 
 ul.navlinks {
@@ -107,13 +120,14 @@ h1 {
     position: fixed;
     left: 0px;
     top: 0px;
-    z-index: -1;
+    z-index: -10;
     padding: 0;
 }
 
 #collaboration {
     padding: 0;
-    height: 600px;
+    height: 70vw;
+    object-fit: cover;
 }
 
 
@@ -121,6 +135,7 @@ h1 {
 
 .quote {
     position: absolute;
+    width: 77%;
     opacity: 0;
     -moz-opacity: 0;
     filter: alpha(opacity=0);
@@ -179,7 +194,7 @@ h1 {
 /*-----------Footer--------*/
 
 footer {
-    position: absolute;
+    position: initial;
     right: 0;
     bottom: 0;
     left: 0;
@@ -193,25 +208,32 @@ footer {
 
 .developers {
     color: #e0f2f1;
-    font-size: 1.3em;
+    font-size: .9em;
     font-family: 'Space Mono', monospace;
+    text-align: left;
+}
+
+#copyright {
+    text-align: left;
+    font-size: .7em;
 }
 
 .social-icons {
-    font-size: 4em;
+    font-size: 3em;
 }
 
 .footer-icons {
-    margin: 0 .5em;
+    margin: 0 .3em;
     animation: pulse 5s infinite;
+    color: #e0e0e0;
 }
 
 @keyframes pulse {
     33% {
-        color: #afb42b;
+        color: #757575;
     }
     66% {
-        background-color: #004d40;
+        color: #e0e0e0;
     }
 }
 
