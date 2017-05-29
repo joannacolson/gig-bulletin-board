@@ -244,3 +244,15 @@ footer {
 
 
 /*-----------Media Queries--------*/
+
+@media (max-width: 750px) {
+    .quote h4 {
+        font-size: 2em;
+    }
+    #mission {
+        font-size: 1em;
+    }
+    .footer-icons {
+        margin: 0;
+    }
+}
