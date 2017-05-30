@@ -49,9 +49,9 @@ Users:
 
 User stories below:
 
-As a PROJECT OWNER I want to post project opportunities to qualified candidates & complete them to spec.
+As a project owner I want to post project opportunities to qualified candidates & complete them to spec.
 
-As a WEB DEV graduate I would like to keep my skills fresh by working on small projects that would benefit me and my community.
+As a web dev graduate I would like to keep my skills fresh by working on small projects that would benefit me and my community.
 
 As a small business owner I would like to develop small projects that can be completed in a short time frame without spending too much time or money.
 
