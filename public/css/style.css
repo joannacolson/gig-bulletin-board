@@ -255,10 +255,12 @@ footer {
     .footer-icons {
         margin: 0;
     }
+
     main {
         min-height: 68vw;
     }
     #collaboration {
         height: 87vw;
     }
+
 }
