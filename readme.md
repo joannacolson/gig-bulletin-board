@@ -2,6 +2,8 @@ Deployed website: https://gig-bb.herokuapp.com
 
 GigBB connects project owners and developers via a bulletin board.
 
+<img width="1280" alt="screen shot-gigbb" src="https://cloud.githubusercontent.com/assets/19542995/26592040/6aab4a26-4514-11e7-9f64-d53a5300b99a.png">
+
 * Requirements: *
 
 * Include a screenshot of the site in repo's README *
