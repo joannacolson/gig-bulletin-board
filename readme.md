@@ -51,7 +51,13 @@ User stories below:
 
 As a PROJECT OWNER I want to post project opportunities to qualified candidates & complete them to spec.
 
-As a WEB DEVELOPER I want to showcase my work and bid on work opportunities.
+As a WEB DEV graduate I would like to keep my skills fresh by working on small projects that would benefit me and my community.
+
+As a small business owner I would like to develop small projects that can be completed in a short time frame without spending too much time or money.
+
+As a small business owner I would like to test out my ideasby hiring a web dev grad before making a tremendous investment. This would also serve as testing purposes.
+
+As a project owner I want to post project opportunities to qualified candidate opportunities to qualified candidates so I can meet a deadline.
 
 * Link to your wireframes – sketches of major views / interfaces in your application *
 <img width="1280" alt="screen shot-gigbb wire frame" src="https://cloud.githubusercontent.com/assets/19542995/26592530/e507372a-4515-11e7-861b-88679de1474b.png">

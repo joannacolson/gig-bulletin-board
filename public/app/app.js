@@ -1,8 +1,7 @@
 var app = angular.module('ProjectApp', ['ui.router', 'ProjectCtrls']);
 
-//app.config sets the configuration this is an initial states
+//app.config sets the configuration, this is an initial state
 // when minification occurs we wont loose those within and w/o the function
-//refer to ln 13-15 index.html for Providers
 app.config([
         '$stateProvider',
         '$urlRouterProvider',
@@ -70,6 +69,5 @@ app.config([
         }
     ])
     .config(['$httpProvider', function($httpProvider) {
-        // add the interceptor to the existing Interceptors
         $httpProvider.interceptors.push('AuthInterceptor');
     }]);

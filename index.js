@@ -2,7 +2,7 @@ require('dotenv').config();
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-//var path says this is the path in which we look for files. refer to ln 28
+//var path says this is the path in which we look for files.
 
 // JSON web token dependencies, including a secret key to sign the token
 var expressJWT = require('express-jwt');
@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('morgan')('dev'));
 
-// OLD controllers without authorization
+// OLD controllers without authorization, left in for future testing
 // app.use('/api/projects', require('./controllers/projects'));
 // app.use('/api/users', require('./controllers/users'));
 
@@ -60,7 +60,6 @@ app.post('/api/auth', function(req, res) {
         if (err || !isAuthenticated) return res.status(401).send({ message: 'User not authenticated' });
 
         // sign the JWT with the user payload and secret, then return
-        // Joanna says the .toJSON() method might not be needed here, from code comparison
         var token = jwt.sign(user.toJSON(), secret);
         console.log({ user: user, token: token });
         // the return clause might not be needed here, from code comparison

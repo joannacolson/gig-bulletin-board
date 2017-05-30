@@ -49,8 +49,6 @@ nav {
 }
 
 .brand-logo {
-    /*    font-family: 'Patrick Hand SC', cursive;
-*/
     font-family: 'Codystar', cursive;
     font-weight: bold;
 }
@@ -67,7 +65,6 @@ nav {
     font-weight: bold;
     margin-top: 8em;
     z-index: 0;
-    /*font-family: 'Shadows Into Light', cursive;*/
 }
 
 ul.navlinks {
@@ -114,7 +111,6 @@ h1 {
 /*---teampic---*/
 
 #teampic {
-    /*background: cover;*/
     width: 100%;
     height: 100%;
     position: fixed;
@@ -238,11 +234,6 @@ footer {
 }
 
 
-/*.fa:hover {
-    color: #afb42b;
-}*/
-
-
 /*-----------Media Queries--------*/
 
 @media (max-width: 750px) {
@@ -255,12 +246,10 @@ footer {
     .footer-icons {
         margin: 0;
     }
-
     main {
         min-height: 68vw;
     }
     #collaboration {
         height: 87vw;
     }
-
 }

@@ -3,7 +3,6 @@ var Project = require('../models/project');
 var router = express.Router();
 
 // Get all projects
-//*** TO DO, NOT HERE, return only projects for currently logged in user (or filter to show only for current user?)
 router.route('/')
     .get(function(req, res) {
         Project.find(function(err, projects) {
@@ -14,7 +13,6 @@ router.route('/')
     });
 
 // Create a project
-//*** TO DO, NOT HERE, have the request include the user_id for the logged in user (as a foreign key)
 router.route('/')
     .post(function(req, res) {
         Project.create(req.body, function(err, project) {

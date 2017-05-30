@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
-//*** added collections to schema
 var UserSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
