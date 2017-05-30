@@ -5,7 +5,7 @@ body {
 }
 
 main {
-    min-height: 555px;
+    min-height: 59vw;
 }
 
 h3 {
@@ -255,4 +255,12 @@ footer {
     .footer-icons {
         margin: 0;
     }
+
+    main {
+        min-height: 68vw;
+    }
+    #collaboration {
+        height: 87vw;
+    }
+
 }

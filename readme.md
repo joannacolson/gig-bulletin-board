@@ -2,6 +2,8 @@ Deployed website: https://gig-bb.herokuapp.com
 
 GigBB connects project owners and developers via a bulletin board.
 
+<img width="1280" alt="screen shot-gigbb" src="https://cloud.githubusercontent.com/assets/19542995/26592040/6aab4a26-4514-11e7-9f64-d53a5300b99a.png">
+
 * Requirements: *
 
 * Include a screenshot of the site in repo's README *
@@ -52,6 +54,7 @@ As a PROJECT OWNER I want to post project opportunities to qualified candidates 
 As a WEB DEVELOPER I want to showcase my work and bid on work opportunities.
 
 * Link to your wireframes – sketches of major views / interfaces in your application *
+<img width="1280" alt="screen shot-gigbb wire frame" src="https://cloud.githubusercontent.com/assets/19542995/26592530/e507372a-4515-11e7-861b-88679de1474b.png">
 
 See: Screen Shot-GigBB wire frame.png in the repo: 
 https://github.com/jadespachie/u3-gigBB
