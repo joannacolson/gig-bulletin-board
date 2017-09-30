@@ -1,6 +1,9 @@
 {
-    "name": "u3-gigBB",
+    "name": "gig-bulletin-board",
     "version": "1.0.0",
+    "engines": {
+      "node": "8.6.0"
+    },
     "main": "index.js",
     "scripts": {
         "start": "node_modules/browser-sync/bin/browser-sync.js start --server . --files ."
